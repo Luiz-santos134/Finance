@@ -1,0 +1,568 @@
+:root {
+    --cor-fundo: #0d0d0d;
+    --cor-secundaria: #1a1a1a;
+    --cor-detalhe: #262626;
+    --cor-detalhe2: #080808;
+    --cor-hover: #333333;
+    --cor-primaria: #e0e0e0;
+    --cor-secundaria-destaque: #b3b3b3;
+    --texto-primario: #f2f2f2;
+    --texto-secundario: #a6a6a6;
+    --borda: #3d3d3d;
+    --input-fundo: #1a1a1a;
+    --input-borda: #4d4d4d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    color: var(--texto-primario);
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    height: 110dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+}
+
+main {
+    position: relative;
+    background-color: var(--cor-fundo);
+    width: calc(100% - 20dvw);
+    min-height: 90dvh;
+    left: 20%;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10dvh;
+    background: var(--cor-secundaria);
+}
+
+aside {
+    width: 20vw;
+    height: 90%;
+    bottom: 0;
+    background-color: var(--cor-detalhe);
+    position: fixed;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+aside ul a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside ul a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.menu-link.active {
+    color: var(--cor-secundaria-destaque);
+    font-weight: bold;
+    background-color: var(--cor-secundaria);
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.logo img {
+    padding: 10px 10px 0px;
+    width: 70px;
+    height: 60px;
+}
+
+.perfil img {
+    object-fit: cover;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+/* =============================================================================== */
+
+.container_finan_pessoais {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100%;
+}
+
+.infosParte1 {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.parte1 {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.parte2 {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.resumo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item {
+    width: 220px;
+    height: 80px;
+    background-color: var(--cor-secundaria);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: start;
+}
+
+.parte2 .item {
+    width: 170px;
+    height: 100px;
+}
+
+.nomeItemResumo {
+    color: var(--texto-secundario);
+}
+
+.valorItemResumo {
+    color: var(--texto-primario);
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.transaction_filter_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.container_finan_pessoais button {
+    background-color: var(--cor-detalhe);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.container_finan_pessoais button:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.selecaoMes,
+.selecaoCategoria,
+.selecaoTipo {
+    border: 1px solid var(--input-borda);
+    padding: 7px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    font-size: 10pt;
+    width: auto;
+}
+
+select {
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+    color: var(--texto-primario);
+    cursor: pointer;
+}
+
+option {
+    background-color: var(--cor-secundaria);
+}
+
+.transations {
+    background-color: var(--cor-detalhe);
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.transations h2 {
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.h_transations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 10px;
+}
+
+.b_transitions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.b_transitions button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: var(--cor-hover);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.b_transitions button:hover {
+    opacity: 0.5;
+    transform: scale(1.05);
+}
+
+.b_transitions button.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-secundaria-destaque);
+    transform: scale(0.5);
+}
+
+.table-container {
+    max-height: 85%;
+}
+
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.transactions-table th {
+    text-align: left;
+    padding: 12px;
+    color: #aaa;
+    font-weight: 500;
+    background-color: var(--cor-secundaria);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.transactions-table td {
+    padding: 14px 12px;
+}
+
+.transactions-table tbody tr:nth-child(odd) {
+    background-color: var(--cor-detalhe);
+}
+
+.transactions-table tbody tr:nth-child(even) {
+    background-color: var(--cor-secundaria);
+}
+
+.transactions-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.transationItem {
+    display: flex;
+    flex-direction: row;
+}
+
+.grafico_container {
+    position: relative;
+    top: 0%;
+    background-color: var(--cor-secundaria);
+    margin-top: 20px;
+    width: 100%;
+    min-height: 30dvh;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container_orcamento_mensal {
+    background-color: var(--cor-secundaria);
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+}
+
+.container_orcamento_mensal h2 {
+    font-size: 14pt;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.orcamento_item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 10pt;
+    font-weight: 300;
+}
+
+.texto_orcamento {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #4ade80;
+    transition: width 0.3s ease;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    outline: none;
+}
+
+/* Remove a bolinha no Chrome */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border: none;
+}
+
+input[type="range"]:disabled {
+    opacity: 1;
+    cursor: default;
+}
+
+/* Remove no Firefox */
+input[type="range"]::-moz-range-thumb {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border: none;
+}
+
+/* Remove no Edge */
+input[type="range"]::-ms-thumb {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    opacity: 0.5;
+}
+
+.container_modal {
+    width: 35%;
+    height: 70%;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.h_modal {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 10px;
+}
+
+.close_modal {
+    width: 40px;
+    height: 40px;
+    transform: scale(0.8);
+    border-radius: 50px;
+    background-color: var(--cor-detalhe);
+    border: none;
+    padding: 10px 0px 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.close_modal:hover {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.modal form {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px 10px;
+    overflow-y: auto;
+}
+
+.modal label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.modal input,
+.modal select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--input-borda);
+    background-color: var(--input-fundo);
+    color: var(--texto-primario);
+}
+
+.modal #btn_add_transition {
+    position: sticky;
+    bottom: 0;
+    width: 95%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--input-borda);
+    background-color: var(--input-fundo);
+    color: var(--texto-primario);
+    transition: all 0.3s ease;
+    }
+    
+    .modal #btn_add_transition:hover {
+        background-color: var(--cor-hover);
+        color: var(--cor-secundaria-destaque);
+        border-color: var(--cor-hover);
+        cursor: pointer;
+        transform: scale(1.03);
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+    
+    .pagination button {
+        background-color: var(--cor-detalhe);
+        border: none;
+        padding: 6px 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+    
+    .pagination button:hover {
+        background-color: var(--cor-hover);
+    }
+    
+    .pagination span {
+        font-size: 10pt;
+        color: var(--texto-secundario);
+}

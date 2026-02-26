@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINANCE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/83da9facc2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Estilo/financasPessoais.css">
+    <link rel="icon" href="ImgLogoFinance.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="ImgLogoFinance.png" alt="img logo">
+        </div>
+        <div class="perfil">
+            <div class="nomeUser">
+                <p>Luiz Cláudio</p>
+            </div>
+            <div class="fotoPerfil">
+                <img src="img_perfil.jpg" alt="img perfil">
+            </div>
+        </div>
+    </header>
+
+    <aside>
+        <div class="menu">
+            <ul>
+                <a href="home.html" class="menu-link">
+                    <li><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                </a>
+                <a href="financas-pessoais.html" class="menu-link">
+                    <li><i class="fas fa-user"></i> Finanças Pessoais</li>
+                </a>
+                <a href="financas-familia.html" class="menu-link">
+                    <li><i class="fas fa-users"></i> Finanças da Família</li>
+                </a>
+                <a href="negocios.html" class="menu-link">
+                    <li><i class="fas fa-briefcase"></i> Negócios</li>
+                </a>
+                <a href="investimentos.html" class="menu-link">
+                    <li><i class="fas fa-chart-line"></i> Investimentos</li>
+                </a>
+                <a href="educacao-financeira.html" class="menu-link">
+                    <li><i class="fas fa-graduation-cap"></i> Educação Financeira</li>
+                </a>
+                <a href="ferramentas.html" class="menu-link">
+                    <li><i class="fas fa-tools"></i> Ferramentas</li>
+                </a>
+                <a href="conta.html" class="menu-link">
+                    <li><i class="fas fa-user-circle"></i> Conta</li>
+                </a>
+            </ul>
+        </div>
+    </aside>
+
+    <main>
+        <div class="container_finan_pessoais">
+            <div class="infosParte1">
+                <div class="parte1">
+                    <div class="resumo">
+                        <div class="item">
+                            <p class="nomeItemResumo">Saldo Atual</p>
+                            <p class="valorItemResumo">$<span id="saldoAtual">10.500</span></p>
+                        </div>
+                        <div class="item">
+                            <p class="nomeItemResumo">Receita do Mês</p>
+                            <p class="valorItemResumo">$<span id="receitaMes">4.200</span></p>
+                        </div>
+                        <div class="item">
+                            <p class="nomeItemResumo">Despesas do Mês</p>
+                            <p class="valorItemResumo">$<span id="despesaMes">2.300</span></p>
+                        </div>
+                    </div>
+
+                    <div class="transaction_filter_container">
+                        <button id="addTransition">Adicionar Transação</button>
+
+                        <div class="selecaoMes">
+                            Mês
+                            <select>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Novembro</option>
+                                <option value="Dezembro">Dezembro</option>
+                            </select>
+                        </div>
+
+                        <div class="selecaoCategoria">
+                            Categoria
+                            <select>
+                                <option value="Comida">Comida</option>
+                                <option value="Salário">Salário</option>
+                                <option value="Lazer">Lazer</option>
+                                <option value="Internet">Internet</option>
+                            </select>
+                        </div>
+
+                        <div class="selecaoTipo">
+                            Tipo
+                            <select>
+                                <option value="Entrada">Entrada</option>
+                                <option value="Saída">Saída</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="transations">
+                        <div class="h_transations">
+                            <h2>Transações</h2>
+                            <div class="b_transitions">
+                                <button id="prevPage">
+                                    <i class="fas fa-arrow-left"></i>
+                                </button>
+                                <span id="pageInfo">1</span>
+                                <button id="nextPage">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            </div>
+                        <div class="table-container">
+                            <table class="transactions-table">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Descrição</th>
+                                        <th>Categoria</th>
+                                        <th>Tipo</th>
+                                        <th>Valor</th>
+                                        <th>Pagamento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>12/12/2026</td>
+                                        <td>Mercado</td>
+                                        <td>Alimentação</td>
+                                        <td>Despesa</td>
+                                        <td>R$ 250</td>
+                                        <td>Pago</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>13/12/2026</td>
+                                        <td>Meu Salário</td>
+                                        <td>Salário</td>
+                                        <td>Receita</td>
+                                        <td>R$ 3.000</td>
+                                        <td>Pago</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>14/12/2026</td>
+                                        <td>Minha Vó</td>
+                                        <td>Outro</td>
+                                        <td>Receita</td>
+                                        <td>R$ 500</td>
+                                        <td>Pago</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>14/12/2026</td>
+                                        <td>Minha Mãe</td>
+                                        <td>Outro</td>
+                                        <td>Receita</td>
+                                        <td>R$ 800</td>
+                                        <td>Pago</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>14/12/2026</td>
+                                        <td>Internet</td>
+                                        <td>Lazer</td>
+                                        <td>Gasto</td>
+                                        <td>R$ 100</td>
+                                        <td>Pago</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14/12/2026</td>
+                                        <td>Internet</td>
+                                        <td>Lazer</td>
+                                        <td>Gasto</td>
+                                        <td>R$ 100</td>
+                                        <td>Pago</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="parte2">
+                    <div class="resumo">
+                        <div class="item">
+                            <p class="nomeItemResumo">Saldo Atual</p>
+                            <p class="valorItemResumo">$<span id="saldoAtual">10.500</span></p>
+                        </div>
+                        <div class="item">
+                            <p class="nomeItemResumo">Receita do Mês</p>
+                            <p class="valorItemResumo">$<span id="receitaMes">4.200</span></p>
+                        </div>
+                    </div>
+                    <div class="container_orcamento_mensal">
+                        <h2>Orçamento Mensal</h2>
+                        <div class="orcamento_item">
+                            <div class="texto_orcamento">
+                                Comida
+                                <div class="valorOrcamento">
+                                    <span>R$ 0</span>
+                                    /
+                                    <span>1000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 40%;"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="orcamento_item">
+                            <div class="texto_orcamento">
+                                Salário
+                                <div class="valorOrcamento">
+                                    <span>R$ 0</span>
+                                    /
+                                    <span>1000</span>
+                                </div>
+                            </div>
+                            <input type="range" class="orcamento-range" min="0" max="1000" value="40" disabled>
+                        </div>
+
+                        <div class="orcamento_item">
+                            <div class="texto_orcamento">
+                                Lazer
+                                <div class="valorOrcamento">
+                                    <span>R$ 0</span>
+                                    /
+                                    <span>1000</span>
+                                </div>
+                            </div>
+                            <input type="range" class="orcamento-range" min="0" max="1000" value="40" disabled>
+                        </div>
+
+                        <div class="orcamento_item">
+                            <div class="texto_orcamento">
+                                Internet
+                                <div class="valorOrcamento">
+                                    <span>R$ 0</span>
+                                    /
+                                    <span>1000</span>
+                                </div>
+                            </div>
+                            <input type="range" class="orcamento-range" min="0" max="1000" value="40" disabled>
+                        </div>
+
+                        <div class="orcamento_item">
+                            <div class="texto_orcamento">
+                                Transporte
+                                <div class="valorOrcamento">
+                                    <span>R$ 0</span>
+                                    /
+                                    <span>1000</span>
+                                </div>
+                            </div>
+                            <input type="range" class="orcamento-range" min="0" max="1000" value="40" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grafico_container">
+                <div class="conteiner_grafico1">
+                    Alimentação <br>
+                    Transporte
+                </div>
+                <div class="container_grafico2">Jan, Fev, Mar, Abr</div>
+            </div>
+        </div>
+    </main>
+    <div class="modal">
+        <div class="container_modal">
+            <div class="h_modal">
+                <h2>Adicionar Transação</h2>
+                <button class="close_modal" id="fechar_modal">
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <form class="form_modal">
+                <label for="tipo">Tipo:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecione</option>
+                    <option value="Receita">Receita</option>
+                    <option value="Despesa">Despesa</option>
+                </select>
+    
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" name="valor" required>
+    
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+    
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" placeholder="Ex.: Meu Salário" required>
+    
+                <label for="categoria">Categoria:</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="Comida">Comida</option>
+                    <option value="Salário">Salário</option>
+                    <option value="Lazer">Lazer</option>
+                    <option value="Internet">Internet</option>
+                </select>
+            </form>
+            <button id="btn_add_transition" type="submit" onclick="transitionCreation()">Adicionar</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="script_modal.js"></script>
+</html>

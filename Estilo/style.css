@@ -1,0 +1,233 @@
+:root {
+    --cor-fundo: #0d0d0d;
+    --cor-secundaria: #1a1a1a;
+    --cor-detalhe: #262626;
+    --cor-detalhe2: #080808;
+    --cor-hover: #333333;
+    --cor-primaria: #e0e0e0;
+    --cor-secundaria-destaque: #b3b3b3;
+    --texto-primario: #f2f2f2;
+    --texto-secundario: #a6a6a6;
+    --borda: #3d3d3d;
+    --input-fundo: #1a1a1a;
+    --input-borda: #4d4d4d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    color: var(--texto-primario);
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    height: 110dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+main {
+    position: relative;
+    background-color: var(--cor-fundo);
+    width: calc(100% - 20dvw);
+    min-height: 90dvh;
+    left: 20%;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10dvh;
+    background: var(--cor-secundaria);
+}
+
+aside {
+    width: 20vw;
+    height: 90%;
+    bottom: 0;
+    background-color: var(--cor-detalhe);
+    position: fixed;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+aside ul a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+aside ul a:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.menu-link.active {
+    color: var(--cor-secundaria-destaque);
+    font-weight: bold;
+    background-color: var(--cor-secundaria);
+}
+.perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.logo img{
+    padding: 10px 10px 0px;
+    width: 70px;
+    height: 60px;
+}
+.perfil img{
+    object-fit: cover;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+/* ================================= */
+.container {
+    margin-top: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.infosGerais{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.visao3{
+    max-height: 100%;
+    width: 60%;
+    grid-row: span 2;
+    background-color: var(--cor-detalhe2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+.container_visao3{
+    max-height: 68dvh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-right: 10px;
+}
+.alerta{
+    /* background-color: var(--cor-detalhe); */
+    border: 1px solid rgb(105, 105, 105);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.visao1,
+.visao2 {
+    background-color: var(--cor-detalhe2);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    height: 50%;
+    gap: 30px;
+    font-size: 1.4rem;
+}
+
+.visao1 p {
+    opacity: 0.5;
+    font-weight: 200;
+}
+
+.infosVisao1 {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.visao1 span {
+    color: white;
+    opacity: 1;
+    font-size: 1.2rem;
+}
+
+.graficoPizza {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#grafico {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+#grafico2 {
+    position: absolute;
+    top: 24%;
+    left: 37.3%;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: var(--cor-detalhe2);
+}
