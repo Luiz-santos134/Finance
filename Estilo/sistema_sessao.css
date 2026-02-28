@@ -12,7 +12,9 @@
     --input-fundo: #1a1a1a;
     --input-borda: #4d4d4d;
     --destaque: rgb(102, 28, 145);
-    --fundo-destaque: rgb(61, 25, 121);
+    --destaque2: #1a1a1a;
+    --fundo-destaque: rgba(62, 25, 121, 0.562);
+    --fundo-destaque2: #0d0d0dcb;
 }
 
 * {
@@ -45,6 +47,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 main {
@@ -59,6 +62,7 @@ main {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(10, 10, 10, 0.616);
+    animation: fadeIn 1s ease-in forwards;
 }
 
 .container {
@@ -70,6 +74,38 @@ main {
     align-items: center;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with opacity 0 */
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1; /* End with opacity 1 */
+    transform: translateY(0px);
+  }
+}
+
+/* @keyframes anim {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0.1;
+    }
+    40%{
+        opacity: 0.2
+    }
+    60%{
+        opaciity: 0.3;
+    }
+    80%{
+        opaciity: 0.4;
+    }
+    100%{
+        opaciity: 1;
+    }
+} */
+
 .entrar_container {
     padding: 20px;
     width: 40%;
@@ -79,20 +115,32 @@ main {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: rgba(45, 0, 128, 0.685);
+    background-color: var(--fundo-destaque);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-
-.entrar_container p {
+.cadastrar_container{
+    padding: 20px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--fundo-destaque2);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.entrar_container p, .cadastrar_container p{
     width: 80%;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 300;
     color: var(--texto-primario);
 }
-
-.entrar_container a {
+.entrar_container a, .cadastrar_container a {
+    margin-top: 20px;
     width: 80%;
     padding: 10px;
     background-color: transparent;
@@ -104,25 +152,26 @@ main {
     color: var(--texto-primario);
     transition: all 0.3s ease;
 }
-
-.entrar_container a:hover {
+.entrar_container a:hover{
+    transform: scale(1.05);
     background-color: var(--texto-primario);
     color: var(--destaque);
 }
-
+.cadastrar_container a:hover{
+    transform: scale(1.05);
+    background-color: var(--texto-primario);
+    color: var(--destaque2);
+}
 .container:has(input[name="nome"]:focus) #span_nome {
     animation: mostrarElemento 0.3s ease forwards;
 }
-
 .container:has(input[name="email"]:focus) #span_email {
     animation: mostrarElemento 0.3s ease forwards;
 }
-
 .container:has(input[name="senha"]:focus) #span_senha {
     animation: mostrarElemento 0.3s ease forwards;
 }
-
-.entrar_container span {
+.entrar_container span, .cadastrar_container span {
     position: absolute;
     top: 22%;
     opacity: 0;
@@ -145,13 +194,17 @@ main {
         transform: translateY(0);
     }
 }
-
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+.formulario_cadastro input:-webkit-autofill, .formulario_cadastro input:-webkit-autofill:hover, .formulario_cadastro input:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--destaque); /* Define a cor do texto */
-  background-color: transparent !important; /* Torna o fundo transparente */
-  transition: background-color .5s ease-in-out 0s; /* Tenta impedir o navegador de mudar a cor de volta */
+  background-color: white !important; /* Torna o fundo transparente */
+  transition: background-color 500s ease-in-out 0s; /* Tenta impedir o navegador de mudar a cor de volta */
 }
-.formulario {
+.formulario_login input:-webkit-autofill, .formulario_login input:-webkit-autofill:hover, .formulario_login input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--destaque2); /* Define a cor do texto */
+  background-color: white !important; /* Torna o fundo transparente */
+  transition: background-color 500s ease-in-out 0s; /* Tenta impedir o navegador de mudar a cor de volta */
+}
+.formulario_cadastro, .formulario_login {
     width: 60%;
     height: 100%;
     padding: 20px;
@@ -164,12 +217,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-
-.formulario h1 {
+.formulario_cadastro h1 {
     color: var(--destaque);
 }
-
-.formulario form {
+.formulario_login h1{
+    color: var(--destaque2);
+}
+.formulario_cadastro form, .formulario_login form {
     width: 100%;
     height: 65%;
     display: flex;
@@ -178,8 +232,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     align-items: center;
     gap: 30px;
 }
-
-.formulario form label {
+.formulario_cadastro form label, .formulario_login form label {
     width: 65%;
     display: flex;
     flex-direction: row;
@@ -187,12 +240,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     align-items: center;
     gap: 10px;
 }
-
-.formulario form label i {
+.formulario_cadastro form label i {
     color: var(--destaque);
 }
-
-.formulario form input {
+.formulario_login  form label i{
+    color: var(--destaque2);
+}
+.formulario_cadastro form input {
     width: 100%;
     padding: 10px;
     background-color: transparent;
@@ -204,12 +258,22 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
     transition: all .3s ease;
 }
-
-.formulario form input:focus {
+.formulario_login form input{
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid var(--destaque2);
+    border-radius: 5px;
+    outline: none;
+    color: var(--texto-primario);
+    color: var(--destaque2);
+    box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
+    transition: all .3s ease;
+}
+.formulario_cadastro form input:focus, .formulario_login form input:focus{
     transform: scale(1.02);
 }
-
-.formulario form button {
+.formulario_cadastro form button{
     width: 60%;
     padding: 10px;
     background-color: var(--destaque);
@@ -222,12 +286,24 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     transition: all 0.3s ease;
     box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
 }
-
-.formulario form button:hover {
+.formulario_login form button {
+    width: 60%;
+    padding: 10px;
+    background-color: var(--destaque2);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-primario);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
+}
+.formulario_cadastro form button:hover, .formulario_login form button:hover {
     transform: scale(1.1);
     cursor: pointer;
 }
-video{
+img{
     position: absolute;
     top: 0;
     left: 0;

@@ -12,13 +12,14 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/83da9facc2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Estilo/style.css">
-    <link rel="icon" href="ImgLogoFinance.png">
+    <link rel="icon" href="Assets/ImgLogoFinance.png">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="ImgLogoFinance.png" alt="img logo">
+            <img src="Assets/ImgLogoFinanceSemTexto.png" alt="img logo">
+            <p>FINANCE</p>
         </div>
         <div class="perfil">
             <div class="nomeUser">

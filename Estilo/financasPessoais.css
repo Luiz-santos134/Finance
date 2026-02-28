@@ -122,6 +122,14 @@ aside ul a:hover {
     margin-top: 10px;
 }
 
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
 .logo img {
     padding: 10px 10px 0px;
     width: 70px;
