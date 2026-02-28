@@ -1,0 +1,238 @@
+:root {
+    --cor-fundo: #0d0d0d;
+    --cor-secundaria: #1a1a1a;
+    --cor-detalhe: #262626;
+    --cor-detalhe2: #080808;
+    --cor-hover: #333333;
+    --cor-primaria: #e0e0e0;
+    --cor-secundaria-destaque: #b3b3b3;
+    --texto-primario: #f2f2f2;
+    --texto-secundario: #a6a6a6;
+    --borda: #3d3d3d;
+    --input-fundo: #1a1a1a;
+    --input-borda: #4d4d4d;
+    --destaque: rgb(102, 28, 145);
+    --fundo-destaque: rgb(61, 25, 121);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    list-style: none;
+    color: var(--texto-primario);
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+body {
+    background: linear-gradient(to right, var(--fundo-destaque), rgb(104, 8, 133));
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 80dvw;
+    height: 80dvh;
+    background-color: rgba(255, 255, 255, 0.384);
+    border-radius: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(10, 10, 10, 0.616);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.entrar_container {
+    padding: 20px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(45, 0, 128, 0.685);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.entrar_container p {
+    width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--texto-primario);
+}
+
+.entrar_container a {
+    width: 80%;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid var(--texto-primario);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-primario);
+    transition: all 0.3s ease;
+}
+
+.entrar_container a:hover {
+    background-color: var(--texto-primario);
+    color: var(--destaque);
+}
+
+.container:has(input[name="nome"]:focus) #span_nome {
+    animation: mostrarElemento 0.3s ease forwards;
+}
+
+.container:has(input[name="email"]:focus) #span_email {
+    animation: mostrarElemento 0.3s ease forwards;
+}
+
+.container:has(input[name="senha"]:focus) #span_senha {
+    animation: mostrarElemento 0.3s ease forwards;
+}
+
+.entrar_container span {
+    position: absolute;
+    top: 22%;
+    opacity: 0;
+    font-size: 1.6rem;
+    text-shadow: 0 0 5px white;
+}
+
+@keyframes mostrarElemento {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--destaque); /* Define a cor do texto */
+  background-color: transparent !important; /* Torna o fundo transparente */
+  transition: background-color .5s ease-in-out 0s; /* Tenta impedir o navegador de mudar a cor de volta */
+}
+.formulario {
+    width: 60%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.formulario h1 {
+    color: var(--destaque);
+}
+
+.formulario form {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.formulario form label {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.formulario form label i {
+    color: var(--destaque);
+}
+
+.formulario form input {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid var(--destaque);
+    border-radius: 5px;
+    outline: none;
+    color: var(--texto-primario);
+    color: var(--destaque);
+    box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
+    transition: all .3s ease;
+}
+
+.formulario form input:focus {
+    transform: scale(1.02);
+}
+
+.formulario form button {
+    width: 60%;
+    padding: 10px;
+    background-color: var(--destaque);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--texto-primario);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px 1px rgb(133, 133, 133);
+}
+
+.formulario form button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}

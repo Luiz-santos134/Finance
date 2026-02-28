@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance</title>
+    <link rel="icon" href="Assets/ImgLogoFinance.png">
     <link rel="stylesheet" href="Estilo/index.css">
 </head>
 <body>
-    <img src="fundoFrame.jpg" id="img_fundo">
+    
     <header>
-        <div class="logo">FINANCE</div>
+        <div class="logo">
+            <img src="Assets/ImgLogoFinanceSemTexto.png" width="40px" alt="Logo Finance">
+            FINANCE
+        </div>
 
         <div class="menu">
             <ul>
@@ -22,15 +26,21 @@
                 <li>
                     <a href="">Contato</a>
                 </li>
-                <li>
-                    <a href="">Login</a>
+                <li id="login_btn">
+                    <a href="login.html">Login</a>
                 </li>
-                <li>
-                    <a href="">Cadastrar</a>
+                <li id="cadastro_btn">
+                    <a href="cadastro.html">Cadastrar</a>
                 </li>
             </ul>
         </div>
     </header>
+
+    <div class="hero">
+        <div class="midiaBackground">
+            <img src="fundoFrame.jpg" id="img_fundo">
+        </div>
+    </div>
 
     <main>
         <div class="container">
@@ -41,14 +51,33 @@
                     qualidade financeira
                 </p>
                 <div class="botoes">
-                    <a href="">Get Started</a>
+                    <a href="cadastro.html">Get Started</a>
                 </div>
             </div>
             <div class="img_actor">
-                <img src="imgHomemSorrindo.png" id="img_actor_home" alt="Homem sorrindo">
+                <img src="Assets/imgHomemSorrindo.png" id="img_actor_home" alt="Homem sorrindo">
             </div>
         </div>
 
     </main>
 </body>
+<script>
+    window.addEventListener('load', () => {
+    const video = document.createElement('video');
+    const midiaBackground = document.querySelector('.midiaBackground');
+
+    video.src = 'assets/fundoAnimado.mp4';
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+
+    video.style.opacity = 0;
+
+    video.addEventListener('canplaythrough', () => {
+        video.style.opacity = 1;
+    })
+    midiaBackground.appendChild(video)
+})
+</script>
 </html>
